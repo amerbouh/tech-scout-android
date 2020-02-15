@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/matchDataInputFragment"
+        android:icon="@drawable/ic_videogame_asset_white_24dp"
+        android:title="@string/match_scouting" />
+
+    <item
+        android:id="@+id/pitDataInputFragment"
+        android:icon="@drawable/ic_content_paste_white_24dp"
+        android:title="@string/pit_scouting" />
+
+    <item
+        android:id="@+id/dataSheetListFragment"
+        android:icon="@drawable/ic_folder_white_24dp"
+        android:title="@string/data_sheet_list" />
+
+    <item
+        android:id="@+id/sharedDataSheetListFragment"
+        android:icon="@drawable/ic_folder_shared_white_24dp"
+        android:title="@string/shared_data_sheet_list" />
+
+</menu>

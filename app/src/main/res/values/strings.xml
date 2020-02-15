@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Tech Scout</string>
+
+    <!-- Bottom Navigation -->
+    <string name="pit_scouting">Pit Scouting</string>
+    <string name="match_scouting">Match Scouting</string>
+    <string name="data_sheet_list">Data Sheet</string>
+    <string name="shared_data_sheet_list">Shared Data Sheet</string>
+
+
 </resources>

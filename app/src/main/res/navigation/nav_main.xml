@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/matchDataInputFragment">
+
+    <fragment
+        android:id="@+id/matchDataInputFragment"
+        android:name="com.team3990.techscouting.views.matchScouting.MatchDataInputFragment"
+        android:label="@string/match_scouting"
+        tools:layout="@layout/match_data_input_fragment" />
+    <fragment
+        android:id="@+id/pitDataInputFragment"
+        android:name="com.team3990.techscouting.views.pitScouting.PitDataInputFragment"
+        android:label="@string/pit_scouting"
+        tools:layout="@layout/pit_data_input_fragment" />
+    <fragment
+        android:id="@+id/dataSheetListFragment"
+        android:name="com.team3990.techscouting.views.dataSheet.DataSheetListFragment"
+        android:label="@string/data_sheet_list"
+        tools:layout="@layout/data_sheet_list_fragment" />
+    <fragment
+        android:id="@+id/sharedDataSheetListFragment"
+        android:name="com.team3990.techscouting.views.dataSheet.SharedDataSheetFragment"
+        android:label="@string/shared_data_sheet_list"
+        tools:layout="@layout/shared_data_sheet_fragment" />
+
+</navigation>

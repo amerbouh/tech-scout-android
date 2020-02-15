@@ -12,6 +12,15 @@ import android.bluetooth.le.AdvertiseCallback
 import android.bluetooth.le.AdvertiseData
 import android.bluetooth.le.AdvertiseSettings
 import android.os.ParcelUuid
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import kotlinx.android.synthetic.main.activity_main.*
 import java.nio.charset.Charset
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var server: BluetoothGattServer
     private lateinit var bluetoothManager: BluetoothManager
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     private var serverCallback: BluetoothGattServerCallback = object : BluetoothGattServerCallback() {
         override fun onConnectionStateChange(device: BluetoothDevice?, status: Int, newState: Int) {
@@ -60,11 +70,35 @@ class MainActivity : AppCompatActivity() {
         // Initialize the bluetooth manager property.
         bluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
 
-        // Starts the application's GATT server.
+        // Get an instance of the Nav Controller..
+        val navController = findNavController(R.id.navHostFragment)
+        val topLevelDestinations = setOf(R.id.matchDataInputFragment, R.id.pitDataInputFragment, R.id.dataSheetListFragment, R.id.sharedDataSheetListFragment)
+
+        // Initialize the app bar configuration property.
+        appBarConfiguration = AppBarConfiguration(topLevelDestinations)
+
+        // Setup the Bottom Navigation View and the Action Bar.
+        setupBottomNavMenu(navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        // Start the application's GATT Server.
         startBluetoothServer()
     }
 
     /** Methods */
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.navHostFragment)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun setupBottomNavMenu(navController: NavController) {
+        bottomNavigationView.setupWithNavController(navController)
+    }
 
     private fun startBluetoothServer() {
         server = bluetoothManager.openGattServer(this, serverCallback)
