@@ -2,7 +2,9 @@
     <string name="app_name">Tech Scout</string>
 
     <!-- Menu -->
+    <string name="share">Share</string>
     <string name="search">Search</string>
+    <string name="delete">Delete</string>
     <string name="pit_scouting">Pit Scouting</string>
     <string name="match_scouting">Match Scouting</string>
     <string name="data_sheet_list">Data Sheet</string>
@@ -34,5 +36,12 @@
     <string name="outer_port_scored">Scored outer port cells</string>
     <string name="bottom_port_scored">Scored bottom port cells</string>
     <string name="moves_to_initiation_line">Moves to initiation line</string>
+
+    <!-- Plurals -->
+
+    <plurals name="selection_count">
+        <item quantity="one">%d selection</item>
+        <item quantity="other">%d selections</item>
+    </plurals>
 
 </resources>
