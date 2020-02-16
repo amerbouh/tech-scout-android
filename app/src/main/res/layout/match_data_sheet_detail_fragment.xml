@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="matchdata"
+            type="com.team3990.techscouting.model.MatchData" />
+    </data>
+
+    <!-- Fragment's UI -->
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.dataSheet.MatchDataSheetDetailFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detailsSectionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/details"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/personOutlineImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_person_outline_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/scouterNameTextView"
+                app:layout_constraintStart_toStartOf="@+id/detailsSectionTextView"
+                app:layout_constraintTop_toTopOf="@+id/scouterNameTitleTextView" />
+
+            <TextView
+                android:id="@+id/scouterNameTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/scouter_name"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/detailsSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/personOutlineImageView"
+                app:layout_constraintTop_toBottomOf="@+id/detailsSectionTextView" />
+
+            <TextView
+                android:id="@+id/scouterNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/scouterNameTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/scouterNameTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/scouterNameTitleTextView"
+                tools:text="Anas Merbouh"/>
+
+            <ImageView
+                android:id="@+id/clockOutlineImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_time_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/timestampTextView"
+                app:layout_constraintStart_toStartOf="@+id/personOutlineImageView"
+                app:layout_constraintTop_toTopOf="@+id/timetsampTitleTextView" />
+
+            <TextView
+                android:id="@+id/timetsampTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/timestamp"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/detailsSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/clockOutlineImageView"
+                app:layout_constraintTop_toBottomOf="@+id/scouterNameTextView" />
+
+            <TextView
+                android:id="@+id/timestampTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/timetsampTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/timetsampTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/timetsampTitleTextView"
+                tools:text="lun. 1 juil. 2019, 11:12" />
+
+            <TextView
+                android:id="@+id/autonomousPeriodSectionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/autonomous_period"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timestampTextView" />
+
+            <ImageView
+                android:id="@+id/checkmarkImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_done_all_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/movesToInitiationLineTextView"
+                app:layout_constraintStart_toStartOf="@+id/autonomousPeriodSectionTextView"
+                app:layout_constraintTop_toTopOf="@+id/movesToInitiationLineTitleTextView" />
+
+            <TextView
+                android:id="@+id/movesToInitiationLineTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/moves_to_initiation_line"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/autonomousPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/checkmarkImageView"
+                app:layout_constraintTop_toBottomOf="@+id/autonomousPeriodSectionTextView" />
+
+            <TextView
+                android:id="@+id/movesToInitiationLineTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/movesToInitiationLineTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/movesToInitiationLineTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/movesToInitiationLineTitleTextView"
+                tools:text="Yes" />
+
+            <ImageView
+                android:id="@+id/scoredBottomPortImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_exposure_plus_2_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/scoredBottomPortCellsTextView"
+                app:layout_constraintStart_toStartOf="@+id/checkmarkImageView"
+                app:layout_constraintTop_toTopOf="@+id/scoredBottomPortCellsTitleTextView" />
+
+            <TextView
+                android:id="@+id/scoredBottomPortCellsTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/bottom_port_scored"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/autonomousPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/scoredBottomPortImageView"
+                app:layout_constraintTop_toBottomOf="@+id/movesToInitiationLineTextView" />
+
+            <TextView
+                android:id="@+id/scoredBottomPortCellsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/scoredBottomPortCellsTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/scoredBottomPortCellsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/scoredBottomPortCellsTitleTextView"
+                tools:text="2 Power Cells" />
+
+            <ImageView
+                android:id="@+id/scoredInnerPortImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_exposure_plus_2_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/scoredInnerPortCellsTextView"
+                app:layout_constraintStart_toStartOf="@+id/scoredBottomPortImageView"
+                app:layout_constraintTop_toTopOf="@+id/scoredInnerPortCellsTitleTextView" />
+
+            <TextView
+                android:id="@+id/scoredInnerPortCellsTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/inner_port_scored"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/autonomousPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/scoredInnerPortImageView"
+                app:layout_constraintTop_toBottomOf="@+id/scoredBottomPortCellsTextView" />
+
+            <TextView
+                android:id="@+id/scoredInnerPortCellsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/scoredInnerPortCellsTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/scoredInnerPortCellsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/scoredInnerPortCellsTitleTextView"
+                tools:text="3 Power Cells" />
+
+            <ImageView
+                android:id="@+id/scoredOuterPortImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_exposure_plus_2_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/scoredOuterPortCellsTextView"
+                app:layout_constraintStart_toStartOf="@+id/scoredInnerPortImageView"
+                app:layout_constraintTop_toTopOf="@+id/scoredOuterPortCellsTitleTextView" />
+
+            <TextView
+                android:id="@+id/scoredOuterPortCellsTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/outer_port_scored"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/autonomousPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/scoredOuterPortImageView"
+                app:layout_constraintTop_toBottomOf="@+id/scoredInnerPortCellsTextView" />
+
+            <TextView
+                android:id="@+id/scoredOuterPortCellsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/scoredOuterPortCellsTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/scoredOuterPortCellsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/scoredOuterPortCellsTitleTextView"
+                tools:text="4 Power Cells" />
+
+            <TextView
+                android:id="@+id/teleoperatedPeriodSectionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/teleoperated_period"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scoredOuterPortCellsTextView" />
+
+            <ImageView
+                android:id="@+id/rotationControlImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_done_all_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/rotationControlTextView"
+                app:layout_constraintStart_toStartOf="@+id/teleoperatedPeriodSectionTextView"
+                app:layout_constraintTop_toTopOf="@+id/rotationControlTitleTextView" />
+
+            <TextView
+                android:id="@+id/rotationControlTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/rotation_control"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/teleoperatedPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/rotationControlImageView"
+                app:layout_constraintTop_toBottomOf="@+id/teleoperatedPeriodSectionTextView" />
+
+            <TextView
+                android:id="@+id/rotationControlTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/rotationControlTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/rotationControlTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/rotationControlTitleTextView"
+                tools:text="Yes" />
+
+            <ImageView
+                android:id="@+id/positionControlImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_done_all_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/positionControlTextView"
+                app:layout_constraintStart_toStartOf="@+id/rotationControlImageView"
+                app:layout_constraintTop_toTopOf="@+id/positionControlTitleTextView" />
+
+            <TextView
+                android:id="@+id/positionControlTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/position_control"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/teleoperatedPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/positionControlImageView"
+                app:layout_constraintTop_toBottomOf="@+id/rotationControlTextView" />
+
+            <TextView
+                android:id="@+id/positionControlTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/positionControlTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/positionControlTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/positionControlTitleTextView"
+                tools:text="Yes" />
+
+            <ImageView
+                android:id="@+id/climbsImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_done_all_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/climbsTextView"
+                app:layout_constraintStart_toStartOf="@+id/positionControlImageView"
+                app:layout_constraintTop_toTopOf="@+id/climbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/climbsTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/climbs"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/teleoperatedPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/climbsImageView"
+                app:layout_constraintTop_toBottomOf="@+id/positionControlTextView" />
+
+            <TextView
+                android:id="@+id/climbsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/climbsTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/climbsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/climbsTitleTextView"
+                tools:text="Yes" />
+
+            <ImageView
+                android:id="@+id/climbDurationImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_timer_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/climbDurationTextView"
+                app:layout_constraintStart_toStartOf="@+id/climbsImageView"
+                app:layout_constraintTop_toTopOf="@+id/climbDurationTitleTextView" />
+
+            <TextView
+                android:id="@+id/climbDurationTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/climb_duration"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/teleoperatedPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/climbDurationImageView"
+                app:layout_constraintTop_toBottomOf="@+id/climbsTextView" />
+
+            <TextView
+                android:id="@+id/climbDurationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/climbDurationTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/climbDurationTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/climbDurationTitleTextView"
+                tools:text="5 seconds"/>
+
+            <ImageView
+                android:id="@+id/endgameImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_videogame_asset_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/endgameTextView"
+                app:layout_constraintStart_toStartOf="@+id/climbDurationImageView"
+                app:layout_constraintTop_toTopOf="@+id/endgameTitleTextView" />
+
+            <TextView
+                android:id="@+id/endgameTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/endgame"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/teleoperatedPeriodSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/endgameImageView"
+                app:layout_constraintTop_toBottomOf="@+id/climbDurationTextView" />
+
+            <TextView
+                android:id="@+id/endgameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/endgameTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/endgameTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/endgameTitleTextView"
+                tools:text="Climbs"/>
+
+            <TextView
+                android:id="@+id/otherSectionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/other"
+                android:textAllCaps="true"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/endgameTextView" />
+
+            <ImageView
+                android:id="@+id/mobilityImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_mobility_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/mobilityTextView"
+                app:layout_constraintStart_toStartOf="@+id/otherSectionTextView"
+                app:layout_constraintTop_toTopOf="@+id/mobilityTitleTextView" />
+
+            <TextView
+                android:id="@+id/mobilityTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/mobility"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/otherSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/mobilityImageView"
+                app:layout_constraintTop_toBottomOf="@+id/otherSectionTextView" />
+
+            <TextView
+                android:id="@+id/mobilityTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/mobilityTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/mobilityTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/mobilityTitleTextView"
+                tools:text="Really good" />
+
+            <ImageView
+                android:id="@+id/commentsImageView"
+                android:layout_width="@dimen/medium_image_view_width"
+                android:layout_height="@dimen/medium_image_view_height"
+                android:src="@drawable/ic_comment_gray_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/commentsTextView"
+                app:layout_constraintStart_toStartOf="@+id/mobilityImageView"
+                app:layout_constraintTop_toTopOf="@+id/commentsTitleTextView" />
+
+            <TextView
+                android:id="@+id/commentsTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/comments"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="@+id/otherSectionTextView"
+                app:layout_constraintStart_toEndOf="@+id/commentsImageView"
+                app:layout_constraintTop_toBottomOf="@+id/mobilityTextView" />
+
+            <TextView
+                android:id="@+id/commentsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/commentsTitleTextView"
+                app:layout_constraintStart_toStartOf="@+id/commentsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/commentsTitleTextView"
+                tools:text="The pilots seem to be really skilled and the team seems to have a good strategy team" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

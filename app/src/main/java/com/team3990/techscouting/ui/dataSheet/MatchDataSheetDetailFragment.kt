@@ -1,4 +1,4 @@
-package com.team3990.techscouting.views.matchScouting
+package com.team3990.techscouting.ui.dataSheet
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,24 +9,24 @@ import android.view.ViewGroup
 
 import com.team3990.techscouting.R
 
-class MatchDataInputFragment : Fragment() {
+class MatchDataSheetDetailFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MatchDataInputFragment()
+        fun newInstance() = MatchDataSheetDetailFragment()
     }
 
-    private lateinit var viewModel: MatchDataInputViewModel
+    private lateinit var viewModel: MatchDataSheetDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.match_data_input_fragment, container, false)
+        return inflater.inflate(R.layout.match_data_sheet_detail_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MatchDataInputViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(MatchDataSheetDetailViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

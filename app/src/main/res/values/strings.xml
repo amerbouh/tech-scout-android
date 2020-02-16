@@ -1,11 +1,38 @@
 <resources>
     <string name="app_name">Tech Scout</string>
 
-    <!-- Bottom Navigation -->
+    <!-- Menu -->
+    <string name="search">Search</string>
     <string name="pit_scouting">Pit Scouting</string>
     <string name="match_scouting">Match Scouting</string>
     <string name="data_sheet_list">Data Sheet</string>
-    <string name="shared_data_sheet_list">Shared Data Sheet</string>
 
+    <!-- Data Sheet Holder -->
+    <string name="created_by_name">Created by %s</string>
+
+    <!-- Data Sheet List -->
+    <string name="empty_data_sheet_set">No data sheet</string>
+    <string name="empty_data_sheet_set_description">It looks like you haven\'t created any data sheet yet</string>
+
+    <!-- Data Sheet Detail -->
+    <string name="other">Other</string>
+    <string name="details">Details</string>
+    <string name="autonomous_period">Autonomous period</string>
+    <string name="teleoperated_period">Teleoperated period</string>
+
+    <!-- Match Data Sheet -->
+    <string name="climbs">Climbs</string>
+    <string name="endgame">Endgame</string>
+    <string name="mobility">Mobility</string>
+    <string name="comments">Comments</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="scouter_name">Scouter name</string>
+    <string name="climb_duration">Climb duration</string>
+    <string name="rotation_control">Rotation control</string>
+    <string name="position_control">Position control</string>
+    <string name="inner_port_scored">Scored inner port cells</string>
+    <string name="outer_port_scored">Scored outer port cells</string>
+    <string name="bottom_port_scored">Scored bottom port cells</string>
+    <string name="moves_to_initiation_line">Moves to initiation line</string>
 
 </resources>

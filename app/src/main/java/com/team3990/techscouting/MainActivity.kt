@@ -12,6 +12,7 @@ import android.bluetooth.le.AdvertiseCallback
 import android.bluetooth.le.AdvertiseData
 import android.bluetooth.le.AdvertiseSettings
 import android.os.ParcelUuid
+import android.view.Menu
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         // Get an instance of the Nav Controller..
         val navController = findNavController(R.id.navHostFragment)
-        val topLevelDestinations = setOf(R.id.matchDataInputFragment, R.id.pitDataInputFragment, R.id.dataSheetListFragment, R.id.sharedDataSheetListFragment)
+        val topLevelDestinations = setOf(R.id.matchDataInputFragment, R.id.pitDataInputFragment, R.id.dataSheetListFragment)
 
         // Initialize the app bar configuration property.
         appBarConfiguration = AppBarConfiguration(topLevelDestinations)
@@ -94,6 +95,11 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.navHostFragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_search, menu)
+        return true
     }
 
     private fun setupBottomNavMenu(navController: NavController) {

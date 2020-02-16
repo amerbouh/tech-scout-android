@@ -1,4 +1,4 @@
-package com.team3990.techscouting.views.dataSheet
+package com.team3990.techscouting.ui.pitScouting
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,24 +9,24 @@ import android.view.ViewGroup
 
 import com.team3990.techscouting.R
 
-class DataSheetListFragment : Fragment() {
+class PitDataInputFragment : Fragment() {
 
     companion object {
-        fun newInstance() = DataSheetListFragment()
+        fun newInstance() = PitDataInputFragment()
     }
 
-    private lateinit var viewModel: DataSheetListViewModel
+    private lateinit var viewModel: PitDataInputViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.data_sheet_list_fragment, container, false)
+        return inflater.inflate(R.layout.pit_data_input_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(DataSheetListViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(PitDataInputViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

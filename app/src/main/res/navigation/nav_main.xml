@@ -7,23 +7,27 @@
 
     <fragment
         android:id="@+id/matchDataInputFragment"
-        android:name="com.team3990.techscouting.views.matchScouting.MatchDataInputFragment"
+        android:name="com.team3990.techscouting.ui.matchScouting.MatchDataInputFragment"
         android:label="@string/match_scouting"
         tools:layout="@layout/match_data_input_fragment" />
     <fragment
         android:id="@+id/pitDataInputFragment"
-        android:name="com.team3990.techscouting.views.pitScouting.PitDataInputFragment"
+        android:name="com.team3990.techscouting.ui.pitScouting.PitDataInputFragment"
         android:label="@string/pit_scouting"
         tools:layout="@layout/pit_data_input_fragment" />
     <fragment
         android:id="@+id/dataSheetListFragment"
-        android:name="com.team3990.techscouting.views.dataSheet.DataSheetListFragment"
+        android:name="com.team3990.techscouting.ui.dataSheet.MatchDataSheetListFragment"
         android:label="@string/data_sheet_list"
-        tools:layout="@layout/data_sheet_list_fragment" />
+        tools:layout="@layout/fragment_data_sheet_list" >
+        <action
+            android:id="@+id/action_dataSheetListFragment_to_matchDataSheetDetailFragment"
+            app:destination="@id/matchDataSheetDetailFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/sharedDataSheetListFragment"
-        android:name="com.team3990.techscouting.views.dataSheet.SharedDataSheetFragment"
-        android:label="@string/shared_data_sheet_list"
-        tools:layout="@layout/shared_data_sheet_fragment" />
+        android:id="@+id/matchDataSheetDetailFragment"
+        android:name="com.team3990.techscouting.ui.dataSheet.MatchDataSheetDetailFragment"
+        android:label="match_data_sheet_detail_fragment"
+        tools:layout="@layout/match_data_sheet_detail_fragment" />
 
 </navigation>

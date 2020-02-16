@@ -1,4 +1,4 @@
-package com.team3990.techscouting.views.pitScouting
+package com.team3990.techscouting.ui.pitScouting
 
 import androidx.lifecycle.ViewModel
 

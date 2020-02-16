@@ -16,9 +16,4 @@
         android:icon="@drawable/ic_folder_white_24dp"
         android:title="@string/data_sheet_list" />
 
-    <item
-        android:id="@+id/sharedDataSheetListFragment"
-        android:icon="@drawable/ic_folder_shared_white_24dp"
-        android:title="@string/shared_data_sheet_list" />
-
 </menu>
