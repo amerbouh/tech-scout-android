@@ -6,28 +6,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 
 import com.team3990.techscouting.R
+import com.team3990.techscouting.databinding.FragmentMatchDataSheetDetailBinding
 
 class MatchDataSheetDetailFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MatchDataSheetDetailFragment()
-    }
+    /** Properties */
 
-    private lateinit var viewModel: MatchDataSheetDetailViewModel
+    private val viewModel: MatchDataSheetDetailViewModel by lazy { ViewModelProviders.of(this).get(MatchDataSheetDetailViewModel::class.java) }
+
+    /** Fragment's lifecycle */
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.match_data_sheet_detail_fragment, container, false)
-    }
+        val binding: FragmentMatchDataSheetDetailBinding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_match_data_sheet_detail, container, false)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MatchDataSheetDetailViewModel::class.java)
-        // TODO: Use the ViewModel
+        // Initialize the binding's view model property.
+        binding.viewmodel = viewModel
+
+        return binding.root
     }
 
 }

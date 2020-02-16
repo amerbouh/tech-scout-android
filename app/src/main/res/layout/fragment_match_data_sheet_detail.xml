@@ -3,8 +3,8 @@
 
     <data>
         <variable
-            name="matchdata"
-            type="com.team3990.techscouting.model.MatchData" />
+            name="viewmodel"
+            type="com.team3990.techscouting.ui.dataSheet.MatchDataSheetDetailViewModel" />
     </data>
 
     <!-- Fragment's UI -->

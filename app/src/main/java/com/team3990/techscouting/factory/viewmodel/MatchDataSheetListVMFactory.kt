@@ -1,4 +1,4 @@
-package com.team3990.techscouting.factory
+package com.team3990.techscouting.factory.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

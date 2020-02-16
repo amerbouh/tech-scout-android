@@ -13,7 +13,7 @@ import com.team3990.techscouting.App
 import com.team3990.techscouting.R
 import com.team3990.techscouting.common.adapter.DataSheetAdapter
 import com.team3990.techscouting.common.interfaces.DataSheet
-import com.team3990.techscouting.factory.MatchDataSheetListVMFactory
+import com.team3990.techscouting.factory.viewmodel.MatchDataSheetListVMFactory
 import kotlinx.android.synthetic.main.fragment_data_sheet_list.*
 
 class MatchDataSheetListFragment : Fragment() {
@@ -27,7 +27,10 @@ class MatchDataSheetListFragment : Fragment() {
         )
 
         // Get an instance of the factory used to create Match Data Sheet List VMs.
-        val matchDataSheetListVMFactory = MatchDataSheetListVMFactory(dataSheetRepository)
+        val matchDataSheetListVMFactory =
+            MatchDataSheetListVMFactory(
+                dataSheetRepository
+            )
 
         ViewModelProviders.of(this, matchDataSheetListVMFactory).get(MatchDataSheetListViewModel::class.java)
     }

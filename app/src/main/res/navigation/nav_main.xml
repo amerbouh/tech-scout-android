@@ -28,6 +28,6 @@
         android:id="@+id/matchDataSheetDetailFragment"
         android:name="com.team3990.techscouting.ui.dataSheet.MatchDataSheetDetailFragment"
         android:label="match_data_sheet_detail_fragment"
-        tools:layout="@layout/match_data_sheet_detail_fragment" />
+        tools:layout="@layout/fragment_match_data_sheet_detail" />
 
 </navigation>
