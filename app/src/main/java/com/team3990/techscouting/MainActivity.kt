@@ -1,28 +1,20 @@
 package com.team3990.techscouting
 
-import android.bluetooth.*
-import android.bluetooth.BluetoothGattService.SERVICE_TYPE_PRIMARY
+import android.app.SearchManager
+import android.content.ComponentName
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import java.util.*
-import android.bluetooth.BluetoothGattCharacteristic
-import android.bluetooth.le.AdvertiseCallback
-import android.bluetooth.le.AdvertiseData
-import android.bluetooth.le.AdvertiseSettings
-import android.os.ParcelUuid
 import android.view.Menu
+import android.widget.SearchView
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.team3990.techscouting.ui.search.SearchActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.nio.charset.Charset
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,6 +49,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_search, menu)
+
+        // Get an instance of the search action and the search
+        // view.
+        val searchMenuItem = menu?.findItem(R.id.app_bar_search)
+        val searchView = searchMenuItem?.actionView as SearchView
+
+        // Get an instance of the search manager and the component name.
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val componentName = ComponentName(this, SearchActivity::class.java)
+
+        // Load the search configuration and assign it to the search view.
+        searchView.setSearchableInfo( searchManager.getSearchableInfo(componentName))
+
         return true
     }
 

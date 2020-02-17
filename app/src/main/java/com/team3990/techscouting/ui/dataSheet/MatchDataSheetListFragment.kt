@@ -2,7 +2,6 @@ package com.team3990.techscouting.ui.dataSheet
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -18,7 +17,6 @@ import com.team3990.techscouting.common.adapter.DataSheetAdapter
 import com.team3990.techscouting.common.interfaces.DataSheet
 import com.team3990.techscouting.factory.viewmodel.MatchDataSheetListVMFactory
 import kotlinx.android.synthetic.main.fragment_data_sheet_list.*
-import kotlin.math.log
 
 class MatchDataSheetListFragment : Fragment() {
 
