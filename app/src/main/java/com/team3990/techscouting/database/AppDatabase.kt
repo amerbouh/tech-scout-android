@@ -4,6 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.team3990.techscouting.database.converter.DateConverter
+import com.team3990.techscouting.database.converter.EndgameConverter
+import com.team3990.techscouting.database.converter.MobilityConverter
 import com.team3990.techscouting.database.dao.MatchDataDao
 import com.team3990.techscouting.model.MatchData
 
@@ -14,8 +16,8 @@ import com.team3990.techscouting.model.MatchData
  * @author Anas Merbouh
  * @version 1.0
  * */
-@Database(entities = [MatchData::class], version = 1)
-@TypeConverters(value = [DateConverter::class])
+@Database(entities = [MatchData::class], version = 3)
+@TypeConverters(value = [DateConverter::class, EndgameConverter::class, MobilityConverter::class])
 abstract class AppDatabase : RoomDatabase() {
 
     /**

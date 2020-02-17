@@ -17,10 +17,16 @@
     <string name="empty_data_sheet_set_description">It looks like you haven\'t created any data sheet yet</string>
 
     <!-- Data Sheet Detail -->
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="none">None</string>
     <string name="other">Other</string>
     <string name="details">Details</string>
+    <string name="not_specified">Not specified</string>
+    <string name="not_applicable">Not applicable</string>
     <string name="autonomous_period">Autonomous period</string>
     <string name="teleoperated_period">Teleoperated period</string>
+    <string name="no_further_comments_provider">No further comments provided by the scouter</string>
 
     <!-- Match Data Sheet -->
     <string name="climbs">Climbs</string>
@@ -42,6 +48,12 @@
     <plurals name="selection_count">
         <item quantity="one">%d selection</item>
         <item quantity="other">%d selections</item>
+    </plurals>
+
+    <plurals name="power_cell_count">
+        <item quantity="zero">None</item>
+        <item quantity="one">%d Power Cell</item>
+        <item quantity="other">%d Power Cells</item>
     </plurals>
 
 </resources>

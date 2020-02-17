@@ -27,7 +27,11 @@
     <fragment
         android:id="@+id/matchDataSheetDetailFragment"
         android:name="com.team3990.techscouting.ui.dataSheet.MatchDataSheetDetailFragment"
-        android:label="match_data_sheet_detail_fragment"
-        tools:layout="@layout/fragment_match_data_sheet_detail" />
+        android:label="@string/details"
+        tools:layout="@layout/fragment_match_data_sheet_detail" >
+        <argument
+            android:name="matchDataSheet"
+            app:argType="com.team3990.techscouting.model.MatchData" />
+    </fragment>
 
 </navigation>

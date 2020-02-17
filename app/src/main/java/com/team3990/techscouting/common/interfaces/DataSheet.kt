@@ -11,5 +11,6 @@ interface DataSheet {
     val scouterName: String
     val regionalName: String
     val timestampString: String
+    val fullTimestampString: String
 
 }

@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -32,10 +33,9 @@ class MatchDataSheetListFragment : Fragment() {
         )
 
         // Get an instance of the factory used to create Match Data Sheet List VMs.
-        val matchDataSheetListVMFactory =
-            MatchDataSheetListVMFactory(
+        val matchDataSheetListVMFactory = MatchDataSheetListVMFactory(
                 dataSheetRepository
-            )
+        )
 
         ViewModelProviders.of(this, matchDataSheetListVMFactory).get(MatchDataSheetListViewModel::class.java)
     }
@@ -43,8 +43,11 @@ class MatchDataSheetListFragment : Fragment() {
     private val activatedListener: OnItemActivatedListener<Long> = OnItemActivatedListener { item, e ->
         val selectedDataSheet = adapter.getDataSheet(item.position)
 
-        // Navigate to the
-        findNavController().navigate(R.id.action_dataSheetListFragment_to_matchDataSheetDetailFragment)
+        // Create a bundle instance containing the selected data sheet.
+        val bundle = bundleOf("selectedDataSheet" to selectedDataSheet)
+
+        // Navigate to the Match Data Sheet Detail Fragment.
+        findNavController().navigate(R.id.action_dataSheetListFragment_to_matchDataSheetDetailFragment, bundle)
 
         true
     }

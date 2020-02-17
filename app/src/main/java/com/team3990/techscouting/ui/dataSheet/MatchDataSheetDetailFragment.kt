@@ -10,12 +10,21 @@ import androidx.databinding.DataBindingUtil
 
 import com.team3990.techscouting.R
 import com.team3990.techscouting.databinding.FragmentMatchDataSheetDetailBinding
+import com.team3990.techscouting.factory.viewmodel.MatchDataSheetDetailVMFactory
+import com.team3990.techscouting.model.MatchData
 
 class MatchDataSheetDetailFragment : Fragment() {
 
     /** Properties */
 
-    private val viewModel: MatchDataSheetDetailViewModel by lazy { ViewModelProviders.of(this).get(MatchDataSheetDetailViewModel::class.java) }
+    private val viewModel: MatchDataSheetDetailViewModel by lazy {
+        val selectedDataSheet = arguments?.getSerializable("selectedDataSheet") as MatchData
+
+        // Get an instance of the Match Data Sheet Detial VM Factory.
+        val matchDataSheetVMFactory = MatchDataSheetDetailVMFactory(resources, selectedDataSheet)
+
+        ViewModelProviders.of(this, matchDataSheetVMFactory).get(MatchDataSheetDetailViewModel::class.java)
+    }
 
     /** Fragment's lifecycle */
 
