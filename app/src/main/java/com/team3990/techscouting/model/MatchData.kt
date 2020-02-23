@@ -8,6 +8,7 @@ import com.team3990.techscouting.util.Endgame
 import com.team3990.techscouting.util.Mobility
 import com.team3990.techscouting.util.toFileTimestampString
 import com.team3990.techscouting.util.toFullTimestampString
+import org.json.JSONObject
 import java.io.Serializable
 
 @Entity
@@ -94,5 +95,30 @@ data class MatchData(
 
     override val fullTimestampString: String
         get() = timestamp.toFullTimestampString()
+
+
+    /** Methods */
+
+    fun toJSON() : String = JSONObject().apply {
+        put("id", id)
+        put("name", name)
+        put("climbs", climbs)
+        put("endgame", endgame.toBLETransferableEnum())
+        put("mobility", mobility?.toBLETransferableEnum())
+        put("comments", comments)
+        put("fileName", fileName)
+        put("timestamp", timestamp)
+        put("scouterName", scouterName)
+        put("regionalName", regionalName)
+        put("climbDuration", climbDuration)
+        put("rotationControl", rotationControl)
+        put("positionControl", positionControl)
+        put("scoredOuterPortCells", scoredOuterPortCells)
+        put("scoredInnerPortCells", scoredInnerPortCells)
+        put("scoredBottomPortCells", scoredBottomPortCells)
+        put("movesToInitiationLine", movesToInitiationLine)
+    }.toString()
+
+    fun toByteArray() : ByteArray = this.toJSON().toByteArray()
 
 }

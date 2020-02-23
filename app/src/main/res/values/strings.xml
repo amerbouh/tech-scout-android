@@ -9,8 +9,9 @@
     <string name="match_scouting">Match Scouting</string>
     <string name="data_sheet_list">Data Sheet</string>
 
-    <!-- Search hint -->
+    <!-- Search -->
     <string name="search_hint">Search in Tech Scout</string>
+    <string name="search_results"></string>
 
     <!-- Data Sheet Holder -->
     <string name="created_by_name">Created by %s</string>

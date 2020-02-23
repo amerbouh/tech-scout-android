@@ -2,6 +2,7 @@ package com.team3990.techscouting
 
 import android.app.Application
 import android.os.AsyncTask
+import android.util.Log
 import androidx.room.Room
 import com.team3990.techscouting.common.interfaces.DataSheet
 import com.team3990.techscouting.database.AppDatabase
@@ -29,14 +30,6 @@ class App : Application() {
 
         // Initialize the repository factory instance.
         repositoryFactory = RepositoryFactory()
-
-        AsyncTask.execute {
-            val dummyMatchData = MatchData(1, "Quals 2", Date(), "Samuel Proulx", "Sherbrooke")
-            val dummyMatchData2 = MatchData(2, "Quals 3", Date(), "Nardo Jean-Gilles", "Sherbrooke")
-
-            database.matchDataDao().save(dummyMatchData)
-            database.matchDataDao().save(dummyMatchData2)
-        }
     }
 
 }
